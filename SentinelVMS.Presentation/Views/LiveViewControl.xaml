@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="SentinelVMS.Presentation.Views.LiveViewControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:SentinelVMS.Presentation.Controls"
+             xmlns:vm="clr-namespace:SentinelVMS.Presentation.ViewModels">
+    <Grid>
+        <Grid.Resources>
+            <BooleanToVisibilityConverter x:Key="BoolToVisibility"/>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Video grid fills the full content area -->
+        <ItemsControl ItemsSource="{Binding Tiles}" HorizontalContentAlignment="Stretch"
+                      VerticalContentAlignment="Stretch">
+            <ItemsControl.Style>
+                <Style TargetType="ItemsControl">
+                    <Setter Property="Visibility" Value="Visible"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsSingleTileMode}" Value="True">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ItemsControl.Style>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Rows="{Binding GridRows}" Columns="{Binding GridColumns}"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type vm:LiveTileViewModel}">
+                    <controls:LiveTileControl Margin="3"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <Grid Visibility="{Binding IsSingleTileMode, Converter={StaticResource BoolToVisibility}}"
+              Background="Transparent">
+            <controls:LiveTileControl DataContext="{Binding FocusedTile}" Margin="3"/>
+
+            <!-- Back to Grid overlay button -->
+            <Button Content="&#8592; Grid View"
+                    HorizontalAlignment="Left" VerticalAlignment="Top"
+                    Margin="12,12,0,0"
+                    Width="110" Height="30"
+                    FontSize="11" FontWeight="SemiBold"
+                    Cursor="Hand"
+                    Opacity="0.85"
+                    Panel.ZIndex="99"
+                    Click="ExitSingleTileMode_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#CC1F2937"/>
+                        <Setter Property="Foreground" Value="#FFFFFFFF"/>
+                        <Setter Property="BorderBrush" Value="#3A5068"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Padding" Value="10,0"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            CornerRadius="4"
+                                            Padding="{TemplateBinding Padding}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#EE1F9BFF"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

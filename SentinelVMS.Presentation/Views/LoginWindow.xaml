@@ -1,0 +1,87 @@
+﻿<Window x:Class="SentinelVMS.Presentation.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Sentinel VMS"
+        Width="420" Height="460"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource AppBackgroundBrush}">
+
+    <Grid>
+        <!-- Left accent bar -->
+        <Rectangle Width="4" HorizontalAlignment="Left"
+                   Fill="{StaticResource AccentBrush}"/>
+
+        <!-- Main card -->
+        <Border Margin="4,0,0,0" Background="{StaticResource SurfaceBrush}"
+                BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,0,0,0">
+            <Grid Margin="48,40,48,32">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>   <!-- Logo area -->
+                    <RowDefinition Height="32"/>
+                    <RowDefinition Height="Auto"/>   <!-- Username label -->
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="Auto"/>   <!-- Username input -->
+                    <RowDefinition Height="16"/>
+                    <RowDefinition Height="Auto"/>   <!-- Password label -->
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="Auto"/>   <!-- Password input -->
+                    <RowDefinition Height="16"/>
+                    <RowDefinition Height="Auto"/>   <!-- Remember me -->
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="Auto"/>   <!-- Sign in button -->
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>   <!-- Error message -->
+                </Grid.RowDefinitions>
+
+                <!-- Brand -->
+                <StackPanel Grid.Row="0">
+                    <TextBlock Text="&#9673; SENTINEL VMS" FontSize="22" FontWeight="Bold"
+                               Foreground="{StaticResource AccentBrush}"/>
+                    <TextBlock Text="Enterprise Video Management System"
+                               FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,6,0,0"/>
+                    <Rectangle Height="1" Fill="{StaticResource BorderBrush}" Margin="0,14,0,0"/>
+                </StackPanel>
+
+                <!-- Username label -->
+                <TextBlock Grid.Row="2" Text="USERNAME" FontSize="10" FontWeight="SemiBold"
+                           Foreground="{StaticResource TextSecondaryBrush}"/>
+
+                <!-- Username input -->
+                <TextBox Grid.Row="4" Height="40"
+                         Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource InputTextBoxStyle}"/>
+
+                <!-- Password label -->
+                <TextBlock Grid.Row="6" Text="PASSWORD" FontSize="10" FontWeight="SemiBold"
+                           Foreground="{StaticResource TextSecondaryBrush}"/>
+
+                <!-- Password input -->
+                <PasswordBox Grid.Row="8" Height="40"
+                             x:Name="PasswordBox"
+                             PasswordChanged="PasswordBox_OnPasswordChanged"
+                             Style="{StaticResource InputPasswordBoxStyle}"/>
+
+                <!-- Remember me -->
+                <CheckBox Grid.Row="10" Content="Keep me signed in"
+                          IsChecked="{Binding RememberMe}"
+                          FontSize="11"
+                          Foreground="{StaticResource TextSecondaryBrush}"/>
+
+                <!-- Sign in button -->
+                <Button Grid.Row="12" Height="44"
+                        Content="Sign In"
+                        Command="{Binding LoginCommand}"
+                        Style="{StaticResource AccentButtonStyle}"
+                        FontSize="14" FontWeight="SemiBold"/>
+
+                <!-- Error message -->
+                <TextBlock Grid.Row="14" Text="{Binding ErrorMessage}"
+                           Foreground="{StaticResource OfflineBrush}"
+                           FontSize="11"
+                           TextWrapping="Wrap"
+                           HorizontalAlignment="Center"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

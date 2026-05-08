@@ -1,0 +1,241 @@
+﻿<UserControl x:Class="SentinelVMS.Presentation.Views.DeviceManagementControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Background="{StaticResource AppBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>    <!-- Page header -->
+            <RowDefinition Height="Auto"/>    <!-- Add NVR form card -->
+            <RowDefinition Height="Auto"/>    <!-- Action buttons bar -->
+            <RowDefinition Height="*"/>       <!-- Devices datagrid -->
+        </Grid.RowDefinitions>
+
+        <!-- Page header -->
+        <Border Grid.Row="0" Background="{StaticResource SurfaceBrush}"
+                BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,0,0,1"
+                Padding="20,14">
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Left">
+                    <TextBlock Text="Device Management" FontSize="18" FontWeight="SemiBold"
+                               Foreground="{StaticResource TextPrimaryBrush}"/>
+                    <TextBlock Text="Add and manage NVR devices and camera channels"
+                               FontSize="12" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,3,0,0"/>
+                </StackPanel>
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button Width="100" Height="32" Content="Refresh" Margin="5,0"
+                            Command="{Binding LoadCommand}" Style="{StaticResource FlatButtonStyle}"/>
+                    <Button Width="130" Height="32" Content="Auto Discover" Margin="5,0"
+                            Command="{Binding DiscoverCommand}" Style="{StaticResource FlatButtonStyle}"/>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+
+        <!-- Add NVR form card -->
+        <Border Grid.Row="1" Background="{StaticResource SurfaceBrush}"
+                BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,0,0,1"
+                Padding="20,16">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>   <!-- Section label -->
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="Auto"/>   <!-- Labels row -->
+                    <RowDefinition Height="4"/>
+                    <RowDefinition Height="Auto"/>   <!-- Inputs row -->
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="ADD NVR DEVICE" FontSize="10" FontWeight="SemiBold"
+                           Foreground="{StaticResource TextMutedBrush}"/>
+
+                <!-- Field labels -->
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="160"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Device Name" FontSize="10"
+                               Foreground="{StaticResource TextSecondaryBrush}" Margin="2,0"/>
+                    <TextBlock Grid.Column="1" Text="IP Address" FontSize="10"
+                               Foreground="{StaticResource TextSecondaryBrush}" Margin="2,0"/>
+                    <TextBlock Grid.Column="2" Text="Username" FontSize="10"
+                               Foreground="{StaticResource TextSecondaryBrush}" Margin="2,0"/>
+                    <TextBlock Grid.Column="3" Text="Password" FontSize="10"
+                               Foreground="{StaticResource TextSecondaryBrush}" Margin="2,0"/>
+                    <TextBlock Grid.Column="4" Text="Port" FontSize="10"
+                               Foreground="{StaticResource TextSecondaryBrush}" Margin="2,0"/>
+                    <TextBlock Grid.Column="5" Text="Manufacturer" FontSize="10"
+                               Foreground="{StaticResource TextSecondaryBrush}" Margin="2,0"/>
+                </Grid>
+
+                <!-- Input fields -->
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="160"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0" Height="34" Margin="2,0"
+                             Text="{Binding NewDeviceName, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource InputTextBoxStyle}"/>
+                    <TextBox Grid.Column="1" Height="34" Margin="2,0"
+                             Text="{Binding NewDeviceHost, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource InputTextBoxStyle}"/>
+                    <TextBox Grid.Column="2" Height="34" Margin="2,0"
+                             Text="{Binding NewDeviceUsername, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource InputTextBoxStyle}"/>
+                    <TextBox Grid.Column="3" Height="34" Margin="2,0"
+                             Text="{Binding NewDevicePassword, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource InputTextBoxStyle}"/>
+                    <Border Grid.Column="4" Height="34" Margin="2,0"
+                            Background="{StaticResource InputBgBrush}"
+                            BorderBrush="{StaticResource BorderBrush}"
+                            BorderThickness="1" CornerRadius="5">
+                        <TextBlock Text="37777" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                   Foreground="{StaticResource TextMutedBrush}" FontSize="12"/>
+                    </Border>
+                    <TextBox Grid.Column="5" Height="34" Margin="2,0"
+                             Text="{Binding NewDeviceManufacturer, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource InputTextBoxStyle}"/>
+                    <Button Grid.Column="6" Height="34" Margin="8,0,2,0"
+                            Content="+ Add NVR"
+                            Command="{Binding AddManualDeviceCommand}"
+                            Style="{StaticResource AccentButtonStyle}" FontSize="12"/>
+                </Grid>
+            </Grid>
+        </Border>
+
+        <!-- Action buttons -->
+        <Border Grid.Row="2" Background="{StaticResource SurfaceBrush}"
+                BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,0,0,1"
+                Padding="20,10">
+            <StackPanel Orientation="Horizontal">
+                <Button Width="140" Height="32" Content="Test Connection" Margin="0,0,8,0"
+                        Command="{Binding TestSelectedConnectionCommand}"
+                        Style="{StaticResource FlatButtonStyle}"/>
+                <Button Width="150" Height="32" Content="Refresh Channel Names" Margin="0,0,8,0"
+                        Command="{Binding RefreshChannelNamesCommand}"
+                        Style="{StaticResource FlatButtonStyle}"/>
+                <Button Width="130" Height="32" Content="Delete Selected"
+                        Command="{Binding DeleteSelectedDeviceCommand}"
+                        Style="{StaticResource DangerButtonStyle}"/>
+                <TextBlock VerticalAlignment="Center" Margin="20,0,0,0" FontSize="11"
+                           Foreground="{StaticResource TextSecondaryBrush}">
+                    <Run Text="Select a row to test, refresh channel names, or delete."/>
+                </TextBlock>
+            </StackPanel>
+        </Border>
+
+        <!-- Devices DataGrid -->
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2.2*"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="1.3*"/>
+            </Grid.ColumnDefinitions>
+
+            <DataGrid Grid.Column="0"
+                      ItemsSource="{Binding Devices}"
+                      SelectedItem="{Binding SelectedDevice}"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      RowHeight="38"
+                      HeadersVisibility="Column"
+                      Background="Transparent"
+                      Foreground="{StaticResource TextPrimaryBrush}"
+                      BorderBrush="{StaticResource BorderBrush}"
+                      BorderThickness="0"
+                      GridLinesVisibility="None"
+                      AlternatingRowBackground="#08FFFFFF"
+                      ColumnHeaderStyle="{StaticResource ProDataGridColumnHeaderStyle}"
+                      RowStyle="{StaticResource ProDataGridRowStyle}"
+                      CellStyle="{StaticResource ProDataGridCellStyle}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name"         Binding="{Binding Name}"            Width="2*"/>
+                    <DataGridTextColumn Header="IP Address"   Binding="{Binding Host}"            Width="140"/>
+                    <DataGridTextColumn Header="Port"         Binding="{Binding Port}"            Width="70"/>
+                    <DataGridTextColumn Header="Channels"     Binding="{Binding Channels.Count}"  Width="80"/>
+                    <DataGridTextColumn Header="Status"       Binding="{Binding HealthStatus}"    Width="100"/>
+                    <DataGridTextColumn Header="Last Check"   Binding="{Binding LastSeenUtc}"     Width="190"/>
+                    <DataGridTextColumn Header="Manufacturer" Binding="{Binding Manufacturer}"    Width="*"/>
+                    <DataGridTextColumn Header="Model"        Binding="{Binding Model}"           Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Border Grid.Column="2"
+                    Background="{StaticResource SurfaceBrush}"
+                    BorderBrush="{StaticResource BorderBrush}"
+                    BorderThickness="1,0,0,0">
+                <Grid Margin="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Background="{StaticResource SurfaceElevatedBrush}"
+                            BorderBrush="{StaticResource BorderBrush}"
+                            BorderThickness="0,0,0,1"
+                            Padding="14,12">
+                        <StackPanel>
+                            <TextBlock Text="Channel Names" FontSize="15" FontWeight="SemiBold"
+                                       Foreground="{StaticResource TextPrimaryBrush}"/>
+                            <TextBlock FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,4,0,0"
+                                       Text="If NVR auto-fetch misses names, edit them here and save per channel."/>
+                        </StackPanel>
+                    </Border>
+
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                        <ItemsControl ItemsSource="{Binding SelectedDevice.Channels}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="{StaticResource BorderSubtleBrush}" BorderThickness="0,0,0,1" Padding="14,10">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="52"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="70"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0"
+                                                       Text="{Binding ChannelNumber, StringFormat=CH {0}}"
+                                                       VerticalAlignment="Center"
+                                                       FontSize="11"
+                                                       FontWeight="SemiBold"
+                                                       Foreground="{StaticResource TextSecondaryBrush}"/>
+                                            <TextBox Grid.Column="1"
+                                                     Margin="8,0"
+                                                     Height="32"
+                                                     Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+                                                     Foreground="{StaticResource TextPrimaryBrush}"
+                                                     Background="{StaticResource InputBgBrush}"
+                                                     BorderBrush="{StaticResource BorderBrush}"
+                                                     BorderThickness="1"
+                                                     Padding="10,6"
+                                                     CaretBrush="{StaticResource AccentBrush}"
+                                                     SelectionBrush="{StaticResource AccentBrush}"
+                                                     SelectionOpacity="0.35"/>
+                                            <Button Grid.Column="2"
+                                                    Width="58"
+                                                    Height="32"
+                                                    HorizontalAlignment="Right"
+                                                    Content="Save"
+                                                    Command="{Binding DataContext.RenameChannelCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                    CommandParameter="{Binding}"
+                                                    Style="{StaticResource FlatButtonStyle}"
+                                                    FontSize="11"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

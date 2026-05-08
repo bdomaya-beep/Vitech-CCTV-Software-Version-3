@@ -1,0 +1,20 @@
+﻿SentinelVMS.Presentation
+
+
+winexe
+C#
+.cs
+C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Presentation\obj\Release\net8.0-windows\
+SentinelVMS.Presentation
+none
+false
+TRACE;RELEASE;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Presentation\App.xaml
+7-725488243
+
+18-696714825
+366-1879249827
+Controls\LiveTileControl.xaml;Themes\Colors.xaml;Themes\Controls.xaml;Views\DeviceManagementControl.xaml;Views\LiveViewControl.xaml;Views\LoginWindow.xaml;Views\MainWindow.xaml;
+
+False
+

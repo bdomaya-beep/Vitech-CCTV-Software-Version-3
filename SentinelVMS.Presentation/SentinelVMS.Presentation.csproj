@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\SentinelVMS.Application\SentinelVMS.Application.csproj" />
+    <ProjectReference Include="..\SentinelVMS.Infrastructure\SentinelVMS.Infrastructure.csproj" />
+    <ProjectReference Include="..\SentinelVMS.Domain\SentinelVMS.Domain.csproj" />
+    <ProjectReference Include="..\SentinelVMS.Networking\SentinelVMS.Networking.csproj" />
+    <ProjectReference Include="..\SentinelVMS.Streaming\SentinelVMS.Streaming.csproj" />
+    <ProjectReference Include="..\SentinelVMS.Rendering\SentinelVMS.Rendering.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="8.0.1" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+</Project>
