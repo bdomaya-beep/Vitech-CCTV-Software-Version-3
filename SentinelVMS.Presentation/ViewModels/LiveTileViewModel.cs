@@ -9,6 +9,9 @@ public partial class LiveTileViewModel : ObservableObject
     private Guid _channelId;
 
     [ObservableProperty]
+    private Guid _renderChannelId;
+
+    [ObservableProperty]
     private string _title = string.Empty;
 
     [ObservableProperty]
@@ -29,11 +32,19 @@ public partial class LiveTileViewModel : ObservableObject
     [ObservableProperty]
     private bool _isPlaceholder;
 
+    // Set to true only after StartChannelAsync has actually been called for this tile
+    public bool IsStreamStarted { get; set; }
+
+    // Both stream URLs are stored at assignment time so single-tile mode can switch quality
+    public string MainstreamUrl { get; set; } = string.Empty;
+    public string SubstreamUrl { get; set; } = string.Empty;
+
     public static LiveTileViewModel FromChannel(CameraChannel channel)
     {
         return new LiveTileViewModel
         {
             ChannelId = channel.Id,
+            RenderChannelId = channel.Id,
             Title = channel.Name,
             IsConnected = false,
             Fps = 0,
@@ -49,13 +60,34 @@ public partial class LiveTileViewModel : ObservableObject
         return new LiveTileViewModel
         {
             ChannelId = Guid.Empty,
-                Title = $"Slot {slot}",
+            RenderChannelId = Guid.Empty,
+            Title = $"Slot {slot}",
             IsConnected = false,
             Fps = 0,
             BitrateKbps = 0,
-                ErrorMessage = string.Empty,
-                IsErrorVisible = false,
-                IsPlaceholder = true
+            ErrorMessage = string.Empty,
+            IsErrorVisible = false,
+            IsPlaceholder = true,
+            IsStreamStarted = false
+        };
+    }
+
+    public LiveTileViewModel CreateFocusedClone()
+    {
+        return new LiveTileViewModel
+        {
+            ChannelId = ChannelId,
+            RenderChannelId = Guid.NewGuid(),
+            Title = Title,
+            IsConnected = false,
+            Fps = 0,
+            BitrateKbps = 0,
+            ErrorMessage = string.Empty,
+            IsErrorVisible = false,
+            IsPlaceholder = IsPlaceholder,
+            IsStreamStarted = false,
+            MainstreamUrl = MainstreamUrl,
+            SubstreamUrl = SubstreamUrl
         };
     }
 

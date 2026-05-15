@@ -21,3 +21,27 @@ C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Infrastruct
 C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Infrastructure\obj\Debug\net8.0-windows\refint\SentinelVMS.Infrastructure.dll
 C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Infrastructure\obj\Debug\net8.0-windows\SentinelVMS.Infrastructure.pdb
 C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Infrastructure\obj\Debug\net8.0-windows\ref\SentinelVMS.Infrastructure.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\bin\Debug\net8.0-windows\SentinelVMS.Infrastructure.deps.json
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\bin\Debug\net8.0-windows\SentinelVMS.Infrastructure.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\bin\Debug\net8.0-windows\SentinelVMS.Infrastructure.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\bin\Debug\net8.0-windows\SentinelVMS.Application.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\bin\Debug\net8.0-windows\SentinelVMS.Domain.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\bin\Debug\net8.0-windows\SentinelVMS.Networking.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\bin\Debug\net8.0-windows\SentinelVMS.Rendering.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\bin\Debug\net8.0-windows\SentinelVMS.Streaming.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\bin\Debug\net8.0-windows\SentinelVMS.Application.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\bin\Debug\net8.0-windows\SentinelVMS.Domain.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\bin\Debug\net8.0-windows\SentinelVMS.Networking.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\bin\Debug\net8.0-windows\SentinelVMS.Streaming.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\bin\Debug\net8.0-windows\SentinelVMS.Rendering.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\obj\Debug\net8.0-windows\SentinelVMS.Infrastructure.csproj.AssemblyReference.cache
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\obj\Debug\net8.0-windows\SentinelVMS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\obj\Debug\net8.0-windows\SentinelVMS.Infrastructure.AssemblyInfoInputs.cache
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\obj\Debug\net8.0-windows\SentinelVMS.Infrastructure.AssemblyInfo.cs
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\obj\Debug\net8.0-windows\SentinelVMS.Infrastructure.csproj.CoreCompileInputs.cache
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\obj\Debug\net8.0-windows\SentinelVMS.Infrastructure.sourcelink.json
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\obj\Debug\net8.0-windows\Sentinel.3B66B104.Up2Date
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\obj\Debug\net8.0-windows\SentinelVMS.Infrastructure.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\obj\Debug\net8.0-windows\refint\SentinelVMS.Infrastructure.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\obj\Debug\net8.0-windows\SentinelVMS.Infrastructure.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Infrastructure\obj\Debug\net8.0-windows\ref\SentinelVMS.Infrastructure.dll

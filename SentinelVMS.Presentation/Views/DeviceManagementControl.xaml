@@ -75,10 +75,10 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="160"/>
                         <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="120"/>
                         <ColumnDefinition Width="130"/>
-                        <ColumnDefinition Width="130"/>
-                        <ColumnDefinition Width="90"/>
-                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="110"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBox Grid.Column="0" Height="34" Margin="2,0"
@@ -90,16 +90,13 @@
                     <TextBox Grid.Column="2" Height="34" Margin="2,0"
                              Text="{Binding NewDeviceUsername, UpdateSourceTrigger=PropertyChanged}"
                              Style="{StaticResource InputTextBoxStyle}"/>
-                    <TextBox Grid.Column="3" Height="34" Margin="2,0"
-                             Text="{Binding NewDevicePassword, UpdateSourceTrigger=PropertyChanged}"
+                    <PasswordBox Grid.Column="3" Height="34" Margin="2,0"
+                                 x:Name="PasswordInput"
+                                 Style="{StaticResource InputPasswordBoxStyle}"/>
+                    <TextBox Grid.Column="4" Height="34" Margin="2,0"
+                             Text="37777"
+                             IsReadOnly="True"
                              Style="{StaticResource InputTextBoxStyle}"/>
-                    <Border Grid.Column="4" Height="34" Margin="2,0"
-                            Background="{StaticResource InputBgBrush}"
-                            BorderBrush="{StaticResource BorderBrush}"
-                            BorderThickness="1" CornerRadius="5">
-                        <TextBlock Text="37777" VerticalAlignment="Center" HorizontalAlignment="Center"
-                                   Foreground="{StaticResource TextMutedBrush}" FontSize="12"/>
-                    </Border>
                     <TextBox Grid.Column="5" Height="34" Margin="2,0"
                              Text="{Binding NewDeviceManufacturer, UpdateSourceTrigger=PropertyChanged}"
                              Style="{StaticResource InputTextBoxStyle}"/>

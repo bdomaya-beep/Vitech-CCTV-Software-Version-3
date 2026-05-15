@@ -12,6 +12,8 @@ public sealed class DeviceTreeItemViewModel(Guid id, string name, DeviceHealthSt
     public bool IsExpanded { get; set; }
     public bool IsChannel { get; init; }
     public bool IsDevice => !IsChannel;
+    public string SubstreamUrl { get; init; } = string.Empty;
+    public string MainstreamUrl { get; init; } = string.Empty;
 
     public string StatusIndicator => Status switch
     {

@@ -17,3 +17,23 @@ C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Rendering\o
 C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Rendering\obj\Debug\net8.0-windows\refint\SentinelVMS.Rendering.dll
 C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Rendering\obj\Debug\net8.0-windows\SentinelVMS.Rendering.pdb
 C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Rendering\obj\Debug\net8.0-windows\ref\SentinelVMS.Rendering.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\bin\Debug\net8.0-windows\SentinelVMS.Rendering.deps.json
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\bin\Debug\net8.0-windows\SentinelVMS.Rendering.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\bin\Debug\net8.0-windows\SentinelVMS.Rendering.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\bin\Debug\net8.0-windows\SentinelVMS.Application.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\bin\Debug\net8.0-windows\SentinelVMS.Domain.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\bin\Debug\net8.0-windows\SentinelVMS.Streaming.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\bin\Debug\net8.0-windows\SentinelVMS.Streaming.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\bin\Debug\net8.0-windows\SentinelVMS.Application.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\bin\Debug\net8.0-windows\SentinelVMS.Domain.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\obj\Debug\net8.0-windows\SentinelVMS.Rendering.csproj.AssemblyReference.cache
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\obj\Debug\net8.0-windows\SentinelVMS.Rendering.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\obj\Debug\net8.0-windows\SentinelVMS.Rendering.AssemblyInfoInputs.cache
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\obj\Debug\net8.0-windows\SentinelVMS.Rendering.AssemblyInfo.cs
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\obj\Debug\net8.0-windows\SentinelVMS.Rendering.csproj.CoreCompileInputs.cache
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\obj\Debug\net8.0-windows\SentinelVMS.Rendering.sourcelink.json
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\obj\Debug\net8.0-windows\Sentinel.6C7D8754.Up2Date
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\obj\Debug\net8.0-windows\SentinelVMS.Rendering.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\obj\Debug\net8.0-windows\refint\SentinelVMS.Rendering.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\obj\Debug\net8.0-windows\SentinelVMS.Rendering.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Rendering\obj\Debug\net8.0-windows\ref\SentinelVMS.Rendering.dll

@@ -10,3 +10,16 @@ C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Networking\
 C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Networking\obj\Debug\net8.0\refint\SentinelVMS.Networking.dll
 C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Networking\obj\Debug\net8.0\SentinelVMS.Networking.pdb
 C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Networking\obj\Debug\net8.0\ref\SentinelVMS.Networking.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Networking\bin\Debug\net8.0\SentinelVMS.Networking.deps.json
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Networking\bin\Debug\net8.0\SentinelVMS.Networking.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Networking\bin\Debug\net8.0\SentinelVMS.Networking.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Networking\obj\Debug\net8.0\SentinelVMS.Networking.csproj.AssemblyReference.cache
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Networking\obj\Debug\net8.0\SentinelVMS.Networking.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Networking\obj\Debug\net8.0\SentinelVMS.Networking.AssemblyInfoInputs.cache
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Networking\obj\Debug\net8.0\SentinelVMS.Networking.AssemblyInfo.cs
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Networking\obj\Debug\net8.0\SentinelVMS.Networking.csproj.CoreCompileInputs.cache
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Networking\obj\Debug\net8.0\SentinelVMS.Networking.sourcelink.json
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Networking\obj\Debug\net8.0\SentinelVMS.Networking.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Networking\obj\Debug\net8.0\refint\SentinelVMS.Networking.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Networking\obj\Debug\net8.0\SentinelVMS.Networking.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Networking\obj\Debug\net8.0\ref\SentinelVMS.Networking.dll

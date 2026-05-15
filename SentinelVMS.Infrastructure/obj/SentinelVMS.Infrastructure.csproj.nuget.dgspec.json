@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Infrastructure\\SentinelVMS.Infrastructure.csproj": {}
+    "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Infrastructure\\SentinelVMS.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Application\\SentinelVMS.Application.csproj": {
+    "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Application\\SentinelVMS.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Application\\SentinelVMS.Application.csproj",
+        "projectUniqueName": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Application\\SentinelVMS.Application.csproj",
         "projectName": "SentinelVMS.Application",
-        "projectPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Application\\SentinelVMS.Application.csproj",
-        "packagesPath": "C:\\Users\\Vitech\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Application\\obj\\",
+        "projectPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Application\\SentinelVMS.Application.csproj",
+        "packagesPath": "C:\\Users\\JCSSI-PC\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Vitech\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\JCSSI-PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Domain\\SentinelVMS.Domain.csproj": {
-                "projectPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Domain\\SentinelVMS.Domain.csproj"
+              "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Domain\\SentinelVMS.Domain.csproj": {
+                "projectPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Domain\\SentinelVMS.Domain.csproj"
               }
             }
           }
@@ -42,7 +42,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -67,15 +67,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.24, 8.0.24]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.24, 8.0.24]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.24, 8.0.24]"
+              "version": "[8.0.26, 8.0.26]"
             }
           ],
           "frameworkReferences": {
@@ -83,21 +83,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Domain\\SentinelVMS.Domain.csproj": {
+    "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Domain\\SentinelVMS.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Domain\\SentinelVMS.Domain.csproj",
+        "projectUniqueName": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Domain\\SentinelVMS.Domain.csproj",
         "projectName": "SentinelVMS.Domain",
-        "projectPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Domain\\SentinelVMS.Domain.csproj",
-        "packagesPath": "C:\\Users\\Vitech\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Domain\\obj\\",
+        "projectPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Domain\\SentinelVMS.Domain.csproj",
+        "packagesPath": "C:\\Users\\JCSSI-PC\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Vitech\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\JCSSI-PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -121,7 +121,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -140,15 +140,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.24, 8.0.24]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.24, 8.0.24]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.24, 8.0.24]"
+              "version": "[8.0.26, 8.0.26]"
             }
           ],
           "frameworkReferences": {
@@ -156,21 +156,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Infrastructure\\SentinelVMS.Infrastructure.csproj": {
+    "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Infrastructure\\SentinelVMS.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Infrastructure\\SentinelVMS.Infrastructure.csproj",
+        "projectUniqueName": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Infrastructure\\SentinelVMS.Infrastructure.csproj",
         "projectName": "SentinelVMS.Infrastructure",
-        "projectPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Infrastructure\\SentinelVMS.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Vitech\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Infrastructure\\obj\\",
+        "projectPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Infrastructure\\SentinelVMS.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\JCSSI-PC\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Vitech\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\JCSSI-PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0-windows"
@@ -182,20 +182,20 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Application\\SentinelVMS.Application.csproj": {
-                "projectPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Application\\SentinelVMS.Application.csproj"
+              "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Application\\SentinelVMS.Application.csproj": {
+                "projectPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Application\\SentinelVMS.Application.csproj"
               },
-              "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Domain\\SentinelVMS.Domain.csproj": {
-                "projectPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Domain\\SentinelVMS.Domain.csproj"
+              "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Domain\\SentinelVMS.Domain.csproj": {
+                "projectPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Domain\\SentinelVMS.Domain.csproj"
               },
-              "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Networking\\SentinelVMS.Networking.csproj": {
-                "projectPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Networking\\SentinelVMS.Networking.csproj"
+              "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Networking\\SentinelVMS.Networking.csproj": {
+                "projectPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Networking\\SentinelVMS.Networking.csproj"
               },
-              "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Rendering\\SentinelVMS.Rendering.csproj": {
-                "projectPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Rendering\\SentinelVMS.Rendering.csproj"
+              "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Rendering\\SentinelVMS.Rendering.csproj": {
+                "projectPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Rendering\\SentinelVMS.Rendering.csproj"
               },
-              "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Streaming\\SentinelVMS.Streaming.csproj": {
-                "projectPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Streaming\\SentinelVMS.Streaming.csproj"
+              "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Streaming\\SentinelVMS.Streaming.csproj": {
+                "projectPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Streaming\\SentinelVMS.Streaming.csproj"
               }
             }
           }
@@ -210,7 +210,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -247,15 +247,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.24, 8.0.24]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.24, 8.0.24]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.24, 8.0.24]"
+              "version": "[8.0.26, 8.0.26]"
             }
           ],
           "frameworkReferences": {
@@ -263,21 +263,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Networking\\SentinelVMS.Networking.csproj": {
+    "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Networking\\SentinelVMS.Networking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Networking\\SentinelVMS.Networking.csproj",
+        "projectUniqueName": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Networking\\SentinelVMS.Networking.csproj",
         "projectName": "SentinelVMS.Networking",
-        "projectPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Networking\\SentinelVMS.Networking.csproj",
-        "packagesPath": "C:\\Users\\Vitech\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Networking\\obj\\",
+        "projectPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Networking\\SentinelVMS.Networking.csproj",
+        "packagesPath": "C:\\Users\\JCSSI-PC\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Networking\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Vitech\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\JCSSI-PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -301,7 +301,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -330,15 +330,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.24, 8.0.24]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.24, 8.0.24]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.24, 8.0.24]"
+              "version": "[8.0.26, 8.0.26]"
             }
           ],
           "frameworkReferences": {
@@ -346,21 +346,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Rendering\\SentinelVMS.Rendering.csproj": {
+    "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Rendering\\SentinelVMS.Rendering.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Rendering\\SentinelVMS.Rendering.csproj",
+        "projectUniqueName": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Rendering\\SentinelVMS.Rendering.csproj",
         "projectName": "SentinelVMS.Rendering",
-        "projectPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Rendering\\SentinelVMS.Rendering.csproj",
-        "packagesPath": "C:\\Users\\Vitech\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Rendering\\obj\\",
+        "projectPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Rendering\\SentinelVMS.Rendering.csproj",
+        "packagesPath": "C:\\Users\\JCSSI-PC\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Rendering\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Vitech\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\JCSSI-PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0-windows"
@@ -372,8 +372,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Streaming\\SentinelVMS.Streaming.csproj": {
-                "projectPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Streaming\\SentinelVMS.Streaming.csproj"
+              "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Streaming\\SentinelVMS.Streaming.csproj": {
+                "projectPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Streaming\\SentinelVMS.Streaming.csproj"
               }
             }
           }
@@ -388,7 +388,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -417,15 +417,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.24, 8.0.24]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.24, 8.0.24]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.24, 8.0.24]"
+              "version": "[8.0.26, 8.0.26]"
             }
           ],
           "frameworkReferences": {
@@ -436,21 +436,21 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Streaming\\SentinelVMS.Streaming.csproj": {
+    "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Streaming\\SentinelVMS.Streaming.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Streaming\\SentinelVMS.Streaming.csproj",
+        "projectUniqueName": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Streaming\\SentinelVMS.Streaming.csproj",
         "projectName": "SentinelVMS.Streaming",
-        "projectPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Streaming\\SentinelVMS.Streaming.csproj",
-        "packagesPath": "C:\\Users\\Vitech\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Streaming\\obj\\",
+        "projectPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Streaming\\SentinelVMS.Streaming.csproj",
+        "packagesPath": "C:\\Users\\JCSSI-PC\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Streaming\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Vitech\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\JCSSI-PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -462,8 +462,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Application\\SentinelVMS.Application.csproj": {
-                "projectPath": "C:\\Users\\Vitech\\Practice\\Vitech CCTV Management Software\\SentinelVMS.Application\\SentinelVMS.Application.csproj"
+              "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Application\\SentinelVMS.Application.csproj": {
+                "projectPath": "c:\\Users\\JCSSI-PC\\Documents\\GitHub\\Vitech-CCTV-Software-Version-3\\SentinelVMS.Application\\SentinelVMS.Application.csproj"
               }
             }
           }
@@ -478,7 +478,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -511,15 +511,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.24, 8.0.24]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.24, 8.0.24]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.24, 8.0.24]"
+              "version": "[8.0.26, 8.0.26]"
             }
           ],
           "frameworkReferences": {
@@ -527,7 +527,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

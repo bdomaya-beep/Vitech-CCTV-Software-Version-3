@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Presentation\obj\Debug\net8.0-windows\
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Presentation\obj\Debug\net8.0-windows\
 SentinelVMS.Presentation
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Presentation\App.xaml
-8-1279510937
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Presentation\App.xaml
+9-1941548685
 
-201614083436
-367551605121
-Controls\LiveTileControl.xaml;Themes\Colors.xaml;Themes\Controls.xaml;Views\DeviceManagementControl.xaml;Views\LiveViewControl.xaml;Views\LoginWindow.xaml;Views\MainWindow.xaml;Views\PlaybackControl.xaml;
+221299097308
+367-256384418
+Controls\LiveTileControl.xaml;Themes\Colors.xaml;Themes\Controls.xaml;Views\DetachedLiveViewWindow.xaml;Views\DeviceManagementControl.xaml;Views\LiveViewControl.xaml;Views\LoginWindow.xaml;Views\MainWindow.xaml;Views\PlaybackControl.xaml;
 
 False
 

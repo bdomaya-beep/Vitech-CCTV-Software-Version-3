@@ -45,7 +45,7 @@ namespace SentinelVMS.Presentation {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "10.0.3.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "10.0.7.0")]
         public void InitializeComponent() {
             if (_contentLoaded) {
                 return;
@@ -65,7 +65,7 @@ namespace SentinelVMS.Presentation {
         /// </summary>
         [System.STAThreadAttribute()]
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "10.0.3.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "10.0.7.0")]
         public static void Main() {
             SentinelVMS.Presentation.App app = new SentinelVMS.Presentation.App();
             app.InitializeComponent();

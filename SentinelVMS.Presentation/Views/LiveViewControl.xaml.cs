@@ -11,12 +11,11 @@ public partial class LiveViewControl : UserControl
         InitializeComponent();
     }
 
-    private void ExitSingleTileMode_Click(object sender, RoutedEventArgs e)
+    private async void ExitSingleTileMode_Click(object sender, RoutedEventArgs e)
     {
         if (DataContext is LiveViewViewModel vm)
         {
-            vm.IsSingleTileMode = false;
-            vm.FocusedTile = null;
+            await vm.ToggleSingleTileMode(null);
         }
     }
 }

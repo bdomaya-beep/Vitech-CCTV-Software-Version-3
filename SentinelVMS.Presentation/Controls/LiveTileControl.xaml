@@ -35,7 +35,7 @@
                     MouseRightButtonDown="VideoViewport_OnMouseRightButtonDown"
                     MouseRightButtonUp="VideoViewport_OnMouseRightButtonUp"
                     MouseMove="VideoViewport_OnMouseMove">
-                <rendering:D3DImageHost x:Name="VideoSurface" ChannelId="{Binding ChannelId}" RenderTransformOrigin="0.5,0.5">
+                <rendering:D3DImageHost x:Name="VideoSurface" ChannelId="{Binding RenderChannelId}" RenderTransformOrigin="0.5,0.5">
                     <rendering:D3DImageHost.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform x:Name="VideoScaleTransform" ScaleX="1" ScaleY="1"/>
@@ -113,18 +113,6 @@
                                    FontSize="10" Foreground="#AAE2EAF4"/>
                     </StackPanel>
                 </DockPanel>
-            </Border>
-
-            <!-- Bottom action bar (Start / Stop) — only shown when NOT placeholder -->
-            <!-- Zoom hint / reset -->
-            <Border VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="8"
-                    Background="#9A081018" Padding="8,5" CornerRadius="4">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Wheel: zoom  Right-drag: pan" FontSize="10" Foreground="#88E2EAF4"/>
-                    <Button Content="Reset" Width="48" Height="22" Margin="8,0,0,0"
-                            Click="ResetZoomButton_OnClick"
-                            Style="{StaticResource FlatButtonStyle}" FontSize="10"/>
-                </StackPanel>
             </Border>
 
             <!-- Error overlay -->

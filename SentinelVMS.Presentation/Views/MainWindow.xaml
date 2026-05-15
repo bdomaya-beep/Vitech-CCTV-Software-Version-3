@@ -115,6 +115,10 @@
                             Command="{Binding OpenLivePopoutCommand}"
                             Style="{StaticResource FlatButtonStyle}"
                             FontSize="11" Margin="4,0"/>
+                    <Button Width="100" Height="30" Content="&#9974; Fullscreen"
+                            Command="{Binding ToggleFullscreenCommand}"
+                            Style="{StaticResource FlatButtonStyle}"
+                            FontSize="11" Margin="4,0"/>
                 </StackPanel>
 
                 <!-- User + Logout -->
@@ -214,6 +218,52 @@
             <Border Grid.Column="2" Background="{StaticResource AppBackgroundBrush}">
                 <ContentControl Content="{Binding CurrentWorkspace}"/>
             </Border>
+        </Grid>
+
+        <!-- FULLSCREEN OVERLAY: covers all chrome, shows only the video wall -->
+        <Grid Grid.Row="0" Grid.RowSpan="3" Panel.ZIndex="999"
+              Background="{StaticResource AppBackgroundBrush}"
+              Visibility="{Binding IsFullscreen, Converter={StaticResource BoolToVisibility}}">
+            <views:LiveViewControl DataContext="{Binding LiveViewModel}"/>
+
+            <!-- Exit button – fades in on mouse hover over top-right corner -->
+            <Button Command="{Binding ToggleFullscreenCommand}"
+                    HorizontalAlignment="Right" VerticalAlignment="Top"
+                    Margin="0,14,14,0"
+                    Width="148" Height="34"
+                    FontSize="11" FontWeight="SemiBold"
+                    Panel.ZIndex="1000"
+                    Opacity="0.80"
+                    ToolTip="Press Esc to exit">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#CC162030"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="BorderBrush" Value="#3A5068"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Setter Property="Content" Value="&#9974;  Exit Fullscreen"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            CornerRadius="5" Padding="12,0">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#EE1A8CFF"/>
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
         </Grid>
 
         <!-- STATUS BAR -->

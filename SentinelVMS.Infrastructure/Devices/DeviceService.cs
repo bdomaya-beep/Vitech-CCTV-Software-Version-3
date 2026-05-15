@@ -42,8 +42,18 @@ public sealed class DeviceService(
             var autoNames = await nvrClient.AutoDetectChannelNamesAsync(
                 entity.Host, entity.Username, entity.Password, cancellationToken);
 
-            // Fall back: use the user-supplied count with generated names if device unreachable
-            var channelCount = autoNames?.Length > 0 ? autoNames.Length : Math.Max(1, request.ChannelCount);
+            // Default to 32 channels for NVRs if auto-detect fails (standard Dahua/Hikvision config)
+            var channelCount = autoNames?.Length > 0 ? autoNames.Length : 32;
+            
+            // Set model to Dahua if not already set and we're connecting as NVR
+            if (string.IsNullOrWhiteSpace(entity.Manufacturer))
+            {
+                entity.Manufacturer = "Dahua";
+            }
+            if (string.IsNullOrWhiteSpace(entity.Model))
+            {
+                entity.Model = await DetectNvrModelAsync(entity.Host, entity.Username, entity.Password, cancellationToken) ?? "NVR";
+            }
 
             for (var i = 1; i <= channelCount; i++)
             {
@@ -163,5 +173,34 @@ public sealed class DeviceService(
         var password = Uri.EscapeDataString(device.Password);
         var subtype = substream ? 1 : 0;
         return $"rtsp://{username}:{password}@{device.Host}:554/cam/realmonitor?channel={channel}&subtype={subtype}";
+    }
+
+    private async Task<string?> DetectNvrModelAsync(string host, string username, string password, CancellationToken cancellationToken)
+    {
+        try
+        {
+            // Try to detect model by probing common NVR endpoints
+            // Dahua typically responds on port 37777 (TCP management)
+            var managementReachable = await tcpProbeService.IsOpenAsync(host, 37777, 1500, cancellationToken);
+            if (managementReachable)
+            {
+                return "Dahua";
+            }
+
+            // Try Hikvision ports
+            var hikReachable = await tcpProbeService.IsOpenAsync(host, 8000, 1500, cancellationToken);
+            if (hikReachable)
+            {
+                return "Hikvision";
+            }
+
+            // Default to generic NVR if RTSP is reachable
+            var rtspReachable = await tcpProbeService.IsOpenAsync(host, 554, 1500, cancellationToken);
+            return rtspReachable ? "NVR" : null;
+        }
+        catch
+        {
+            return null;
+        }
     }
 }

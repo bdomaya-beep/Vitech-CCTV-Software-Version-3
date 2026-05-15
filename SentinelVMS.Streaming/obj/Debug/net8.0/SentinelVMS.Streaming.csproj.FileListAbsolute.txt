@@ -15,3 +15,21 @@ C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Streaming\o
 C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Streaming\obj\Debug\net8.0\refint\SentinelVMS.Streaming.dll
 C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Streaming\obj\Debug\net8.0\SentinelVMS.Streaming.pdb
 C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Streaming\obj\Debug\net8.0\ref\SentinelVMS.Streaming.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Streaming\bin\Debug\net8.0\SentinelVMS.Streaming.deps.json
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Streaming\bin\Debug\net8.0\SentinelVMS.Streaming.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Streaming\bin\Debug\net8.0\SentinelVMS.Streaming.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Streaming\bin\Debug\net8.0\SentinelVMS.Application.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Streaming\bin\Debug\net8.0\SentinelVMS.Domain.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Streaming\bin\Debug\net8.0\SentinelVMS.Application.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Streaming\bin\Debug\net8.0\SentinelVMS.Domain.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Streaming\obj\Debug\net8.0\SentinelVMS.Streaming.csproj.AssemblyReference.cache
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Streaming\obj\Debug\net8.0\SentinelVMS.Streaming.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Streaming\obj\Debug\net8.0\SentinelVMS.Streaming.AssemblyInfoInputs.cache
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Streaming\obj\Debug\net8.0\SentinelVMS.Streaming.AssemblyInfo.cs
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Streaming\obj\Debug\net8.0\SentinelVMS.Streaming.csproj.CoreCompileInputs.cache
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Streaming\obj\Debug\net8.0\SentinelVMS.Streaming.sourcelink.json
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Streaming\obj\Debug\net8.0\Sentinel.2BF3811E.Up2Date
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Streaming\obj\Debug\net8.0\SentinelVMS.Streaming.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Streaming\obj\Debug\net8.0\refint\SentinelVMS.Streaming.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Streaming\obj\Debug\net8.0\SentinelVMS.Streaming.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Streaming\obj\Debug\net8.0\ref\SentinelVMS.Streaming.dll

@@ -37,6 +37,9 @@ public partial class ShellViewModel(
     private int _connectedDeviceCount = 0;
 
     [ObservableProperty]
+    private bool _isFullscreen;
+
+    [ObservableProperty]
     private object? _currentWorkspace;
 
     public async Task InitializeAsync()
@@ -128,6 +131,12 @@ public partial class ShellViewModel(
     }
 
     [RelayCommand]
+    private void ToggleFullscreen()
+    {
+        IsFullscreen = !IsFullscreen;
+    }
+
+    [RelayCommand]
     private void OpenLivePopout()
     {
         CurrentWorkspace = liveViewViewModel;
@@ -155,7 +164,9 @@ public partial class ShellViewModel(
                 .OrderBy(c => c.ChannelNumber)
                 .Select(c => new DeviceTreeItemViewModel(c.Id, c.Name, device.HealthStatus, [])
                 {
-                    IsChannel = true
+                    IsChannel = true,
+                    SubstreamUrl = c.RtspSubstreamUrl,
+                    MainstreamUrl = c.RtspMainstreamUrl
                 })
                 .ToList();
 

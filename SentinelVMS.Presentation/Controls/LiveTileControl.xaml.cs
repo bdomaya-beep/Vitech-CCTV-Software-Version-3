@@ -26,32 +26,46 @@ public partial class LiveTileControl : UserControl
 
     private async void TileBorder_OnDrop(object sender, DragEventArgs e)
     {
-        if (DataContext is not LiveTileViewModel tile)
+        try
         {
-            return;
-        }
+            if (DataContext is not LiveTileViewModel tile)
+            {
+                return;
+            }
 
-        if (!e.Data.GetDataPresent(typeof(DeviceTreeItemViewModel)))
+            if (!e.Data.GetDataPresent(typeof(DeviceTreeItemViewModel)))
+            {
+                return;
+            }
+
+            var item = (DeviceTreeItemViewModel)e.Data.GetData(typeof(DeviceTreeItemViewModel));
+            var liveVm = FindLiveViewViewModel();
+            if (liveVm is null)
+            {
+                return;
+            }
+
+            if (item.IsChannel)
+            {
+                await liveVm.AssignChannelToTileAsync(item.Id, item.Name, tile,
+                    item.SubstreamUrl, item.MainstreamUrl);
+            }
+            else if (item.Children.Count > 0)
+            {
+                // NVR dropped - fill grid starting from the dropped tile
+                await liveVm.AssignDeviceToGridAsync(item.Children, tile);
+            }
+        }
+        catch (Exception ex)
         {
-            return;
+            if (DataContext is LiveTileViewModel tile)
+            {
+                tile.SetError($"Drop failed: {ex.Message}");
+            }
         }
-
-        var item = (DeviceTreeItemViewModel)e.Data.GetData(typeof(DeviceTreeItemViewModel));
-        if (!item.IsChannel)
-        {
-            return;
-        }
-
-        var liveVm = FindLiveViewViewModel();
-        if (liveVm is null)
-        {
-            return;
-        }
-
-        await liveVm.AssignChannelToTileAsync(item.Id, item.Name, tile);
     }
 
-    private void TileBorder_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    private async void TileBorder_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
         if (e.ClickCount < 2)
         {
@@ -64,7 +78,10 @@ public partial class LiveTileControl : UserControl
         }
 
         var liveVm = FindLiveViewViewModel();
-        liveVm?.ToggleSingleTileMode(tile);
+        if (liveVm is not null)
+        {
+            await liveVm.ToggleSingleTileMode(tile);
+        }
     }
 
     private void VideoViewport_OnPreviewMouseWheel(object sender, MouseWheelEventArgs e)
@@ -136,8 +153,21 @@ public partial class LiveTileControl : UserControl
 
     private LiveViewViewModel? FindLiveViewViewModel()
     {
+        // For grid tiles: search for parent ItemsControl (grid layout)
         var itemsControl = FindAncestor<ItemsControl>(this);
-        return itemsControl?.DataContext as LiveViewViewModel;
+        if (itemsControl?.DataContext is LiveViewViewModel gridVm)
+        {
+            return gridVm;
+        }
+
+        // For focused tiles: search for parent UserControl (LiveViewControl) 
+        var userControl = FindAncestor<UserControl>(this);
+        if (userControl?.DataContext is LiveViewViewModel focusedVm)
+        {
+            return focusedVm;
+        }
+
+        return null;
     }
 
     private static T? FindAncestor<T>(DependencyObject current) where T : DependencyObject

@@ -5,6 +5,7 @@ using SentinelVMS.Application.Abstractions.Streaming;
 using SentinelVMS.Domain.Models;
 using SentinelVMS.Presentation.Core;
 using System.Collections.ObjectModel;
+using System.Windows.Threading;
 
 namespace SentinelVMS.Presentation.ViewModels;
 
@@ -12,8 +13,12 @@ public partial class LiveViewViewModel(
     IDeviceService deviceService,
     IStreamingOrchestrator streamingOrchestrator) : ViewModelBase
 {
-    private readonly PeriodicTimer _metricsTimer = new(TimeSpan.FromSeconds(1));
+    private readonly DispatcherTimer _metricsTimer = new(DispatcherPriority.Background)
+    {
+        Interval = TimeSpan.FromSeconds(1)
+    };
     private bool _metricsLoopStarted;
+    private readonly Dictionary<Guid, CameraChannel> _channelIndex = [];
 
     public ObservableCollection<LiveTileViewModel> Tiles { get; } = [];
 
@@ -38,19 +43,16 @@ public partial class LiveViewViewModel(
         await StopAllConnectedTilesAsync();
         Tiles.Clear();
         var devices = await deviceService.GetAllAsync();
-        var channels = devices.SelectMany(x => x.Channels).ToList();
+        RebuildChannelIndex(devices);
 
-        foreach (var channel in channels)
-        {
-            Tiles.Add(LiveTileViewModel.FromChannel(channel));
-        }
-
+        // Start with a clean grid of placeholders; user drags channels onto them
         EnsureGridCapacity(GridRows * GridColumns);
 
         if (!_metricsLoopStarted)
         {
             _metricsLoopStarted = true;
-            _ = Task.Run(UpdateMetricsLoopAsync);
+            _metricsTimer.Tick += MetricsTimer_OnTick;
+            _metricsTimer.Start();
         }
     }
 
@@ -58,26 +60,92 @@ public partial class LiveViewViewModel(
 
     public async Task StopAllConnectedTilesAsync()
     {
-        foreach (var tile in Tiles.Where(t => t.IsConnected && t.ChannelId != Guid.Empty))
+        foreach (var tile in Tiles.Where(t => t.IsStreamStarted && t.ChannelId != Guid.Empty))
         {
-            try { await streamingOrchestrator.StopChannelAsync(tile.ChannelId); } catch { /* best effort */ }
+            try { await streamingOrchestrator.StopChannelAsync(tile.RenderChannelId); } catch { /* best effort */ }
             tile.IsConnected = false;
+            tile.IsStreamStarted = false;
+        }
+
+        if (FocusedTile is { IsStreamStarted: true, RenderChannelId: var focusedRenderId } && focusedRenderId != Guid.Empty)
+        {
+            try { await streamingOrchestrator.StopChannelAsync(focusedRenderId); } catch { /* best effort */ }
+            FocusedTile.IsConnected = false;
+            FocusedTile.IsStreamStarted = false;
+        }
+
+        FocusedTile = null;
+        IsSingleTileMode = false;
+    }
+
+    public async Task AssignDeviceToGridAsync(IReadOnlyList<DeviceTreeItemViewModel> channels, LiveTileViewModel startTile)
+    {
+        if (channels.Count == 0) return;
+
+        var channelItems = channels.Where(c => c.IsChannel).ToList();
+        if (channelItems.Count == 0) return;
+
+        // Resolve all dragged channels in one fetch to avoid repeated DB scans per tile.
+        var devices = await deviceService.GetAllAsync();
+        RebuildChannelIndex(devices);
+
+        var startIndex = Tiles.IndexOf(startTile);
+        if (startIndex < 0) startIndex = 0;
+
+        // Expand grid if necessary so all channels fit
+        var neededTiles = startIndex + channelItems.Count;
+        if (neededTiles > Tiles.Count)
+        {
+            var newGrid = (int)Math.Ceiling(Math.Sqrt(neededTiles));
+            if (newGrid > GridRows || newGrid > GridColumns)
+            {
+                GridRows = newGrid;
+                GridColumns = newGrid;
+            }
+            EnsureGridCapacity(neededTiles);
+        }
+
+        for (var i = 0; i < channelItems.Count; i++)
+        {
+            var tileIndex = startIndex + i;
+            if (tileIndex >= Tiles.Count) break;
+
+            var ch = channelItems[i];
+            var tile = Tiles[tileIndex];
+            _channelIndex.TryGetValue(ch.Id, out var channel);
+
+            try
+            {
+                await AssignChannelToTileAsync(ch.Id, ch.Name, tile,
+                    channel?.RtspSubstreamUrl, channel?.RtspMainstreamUrl);
+            }
+            catch (Exception ex)
+            {
+                tile.SetError($"Play failed: {ex.Message}");
+            }
+
+            // Prevent RTSP burst-open storms when dropping an entire NVR.
+            if (i < channelItems.Count - 1)
+            {
+                await Task.Delay(180);
+            }
         }
     }
 
-    public async Task AssignChannelToTileAsync(Guid channelId, string channelName, LiveTileViewModel targetTile)
+    public async Task AssignChannelToTileAsync(Guid channelId, string channelName, LiveTileViewModel targetTile, string? subUrl = null, string? mainUrl = null)
     {
         // Ensure a channel can only exist in one tile at a time.
         var duplicates = Tiles.Where(t => !ReferenceEquals(t, targetTile) && t.ChannelId == channelId).ToList();
         foreach (var duplicate in duplicates)
         {
-            if (duplicate.IsConnected)
+            if (duplicate.IsStreamStarted)
             {
                 await StopTileAsync(duplicate);
             }
 
             var slotIndex = Tiles.IndexOf(duplicate) + 1;
             duplicate.ChannelId = Guid.Empty;
+            duplicate.RenderChannelId = Guid.Empty;
             duplicate.Title = $"Slot {slotIndex}";
             duplicate.IsPlaceholder = true;
             duplicate.IsConnected = false;
@@ -86,12 +154,13 @@ public partial class LiveViewViewModel(
             duplicate.ClearError();
         }
 
-        if (targetTile.IsConnected && targetTile.ChannelId != Guid.Empty && targetTile.ChannelId != channelId)
+        if (targetTile.IsStreamStarted && targetTile.ChannelId != Guid.Empty && targetTile.ChannelId != channelId)
         {
             await StopTileAsync(targetTile);
         }
 
         targetTile.ChannelId = channelId;
+    targetTile.RenderChannelId = channelId;
         targetTile.Title = channelName;
         targetTile.IsPlaceholder = false;
         targetTile.IsConnected = false;
@@ -99,25 +168,45 @@ public partial class LiveViewViewModel(
         targetTile.BitrateKbps = 0;
         targetTile.ClearError();
 
+        if (!string.IsNullOrWhiteSpace(subUrl) || !string.IsNullOrWhiteSpace(mainUrl))
+        {
+            targetTile.SubstreamUrl = subUrl ?? string.Empty;
+            targetTile.MainstreamUrl = mainUrl ?? string.Empty;
+            await StartGridStreamAsync(targetTile);
+            return;
+        }
+
         await StartTileAsync(targetTile);
     }
 
-    public void ToggleSingleTileMode(LiveTileViewModel? tile)
+    public async Task ToggleSingleTileMode(LiveTileViewModel? tile)
     {
-        if (tile is null || tile.IsPlaceholder)
+        // Exit path — called with null (from the "Grid View" button) or with the same tile (double-click again)
+        if (IsSingleTileMode && (tile is null || (FocusedTile is not null && tile?.ChannelId == FocusedTile.ChannelId)))
         {
-            return;
-        }
-
-        if (IsSingleTileMode && ReferenceEquals(FocusedTile, tile))
-        {
+            var prev = FocusedTile;
             FocusedTile = null;
             IsSingleTileMode = false;
+            // Stop old stream in background — don't await so UI exits instantly
+            if (prev is not null)
+                _ = StopTileAsync(prev);
             return;
         }
 
-        FocusedTile = tile;
+        if (tile is null || tile.IsPlaceholder)
+            return;
+
+        // Swap to new tile immediately so UI shows new camera at once — stop old in background
+        var oldFocused = FocusedTile;
+        var newFocused = tile.CreateFocusedClone();
+        FocusedTile = newFocused;
         IsSingleTileMode = true;
+
+        if (oldFocused is not null)
+            _ = StopTileAsync(oldFocused);
+
+        // Start mainstream for focused view
+        await StartFocusedStreamAsync(newFocused);
     }
 
     [RelayCommand]
@@ -139,16 +228,47 @@ public partial class LiveViewViewModel(
             return;
         }
 
+        // Cache both URLs now that we have the channel record
+        tile.SubstreamUrl = channel.RtspSubstreamUrl;
+        tile.MainstreamUrl = channel.RtspMainstreamUrl;
+
+        await StartGridStreamAsync(tile);
+    }
+
+    private Task StartGridStreamAsync(LiveTileViewModel tile)
+    {
+        // Grid mode uses substream for low latency and bandwidth
+        return StartStreamDirectAsync(tile, tile.SubstreamUrl);
+    }
+
+    private Task StartFocusedStreamAsync(LiveTileViewModel tile)
+    {
+        // Single-tile/zoom mode uses mainstream for full quality
+        return StartStreamDirectAsync(tile, tile.MainstreamUrl);
+    }
+
+    private async Task StartStreamDirectAsync(LiveTileViewModel tile, string rtspUrl)
+    {
+        if (string.IsNullOrWhiteSpace(rtspUrl))
+        {
+            tile.IsConnected = false;
+            tile.IsStreamStarted = false;
+            tile.SetError("Channel RTSP URL is empty.");
+            return;
+        }
+
         try
         {
-            await streamingOrchestrator.StartChannelAsync(channel.Id, channel.RtspSubstreamUrl, true);
-            tile.IsConnected = true;
+            // Instant stream switch: stop old, start new immediately
+            await streamingOrchestrator.StartChannelAsync(tile.RenderChannelId, rtspUrl, true);
+            tile.IsStreamStarted = true;
             tile.ClearError();
         }
         catch (Exception ex)
         {
             tile.IsConnected = false;
-            tile.SetError($"Play failed: {ex.Message}");
+            tile.IsStreamStarted = false;
+            tile.SetError($"Stream error: {ex.Message}");
         }
     }
 
@@ -162,12 +282,14 @@ public partial class LiveViewViewModel(
 
         try
         {
-            await streamingOrchestrator.StopChannelAsync(tile.ChannelId);
+            await streamingOrchestrator.StopChannelAsync(tile.RenderChannelId);
+            tile.IsStreamStarted = false;
             tile.IsConnected = false;
             tile.ClearError();
         }
         catch
         {
+            tile.IsStreamStarted = false;
             tile.IsConnected = false;
         }
     }
@@ -222,20 +344,50 @@ public partial class LiveViewViewModel(
 
     private async Task<CameraChannel?> FindChannelAsync(Guid channelId)
     {
+        if (_channelIndex.TryGetValue(channelId, out var cachedChannel))
+        {
+            return cachedChannel;
+        }
+
         var devices = await deviceService.GetAllAsync();
-        return devices.SelectMany(x => x.Channels).FirstOrDefault(c => c.Id == channelId);
+        RebuildChannelIndex(devices);
+        return _channelIndex.TryGetValue(channelId, out var channel) ? channel : null;
     }
 
-    private async Task UpdateMetricsLoopAsync()
+    private void RebuildChannelIndex(IReadOnlyCollection<Device> devices)
     {
-        while (await _metricsTimer.WaitForNextTickAsync())
+        _channelIndex.Clear();
+        foreach (var channel in devices.SelectMany(x => x.Channels))
         {
-            foreach (var tile in Tiles.Where(x => x.IsConnected))
+            _channelIndex[channel.Id] = channel;
+        }
+    }
+
+    private async void MetricsTimer_OnTick(object? sender, EventArgs e)
+    {
+        var activeTiles = Tiles.Where(x => x.IsStreamStarted && x.RenderChannelId != Guid.Empty).ToList();
+        if (FocusedTile is { IsStreamStarted: true } focused && focused.RenderChannelId != Guid.Empty)
+        {
+            activeTiles.Add(focused);
+        }
+
+        foreach (var tile in activeTiles)
+        {
+            try
             {
-                var metrics = await streamingOrchestrator.GetMetricsAsync(tile.ChannelId);
+                var metrics = await streamingOrchestrator.GetMetricsAsync(tile.RenderChannelId);
                 tile.Fps = metrics.Fps;
                 tile.BitrateKbps = metrics.BitrateKbps;
                 tile.IsConnected = metrics.Connected;
+
+                if (metrics.Connected && tile.IsErrorVisible)
+                {
+                    tile.ClearError();
+                }
+            }
+            catch
+            {
+                tile.IsConnected = false;
             }
         }
     }

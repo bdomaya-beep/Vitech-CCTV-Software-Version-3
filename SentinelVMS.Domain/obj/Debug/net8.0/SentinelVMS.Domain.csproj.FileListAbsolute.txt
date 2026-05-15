@@ -9,3 +9,15 @@ C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Domain\obj\
 C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Domain\obj\Debug\net8.0\refint\SentinelVMS.Domain.dll
 C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Domain\obj\Debug\net8.0\SentinelVMS.Domain.pdb
 C:\Users\Vitech\Practice\Vitech CCTV Management Software\SentinelVMS.Domain\obj\Debug\net8.0\ref\SentinelVMS.Domain.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Domain\bin\Debug\net8.0\SentinelVMS.Domain.deps.json
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Domain\bin\Debug\net8.0\SentinelVMS.Domain.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Domain\bin\Debug\net8.0\SentinelVMS.Domain.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Domain\obj\Debug\net8.0\SentinelVMS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Domain\obj\Debug\net8.0\SentinelVMS.Domain.AssemblyInfoInputs.cache
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Domain\obj\Debug\net8.0\SentinelVMS.Domain.AssemblyInfo.cs
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Domain\obj\Debug\net8.0\SentinelVMS.Domain.csproj.CoreCompileInputs.cache
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Domain\obj\Debug\net8.0\SentinelVMS.Domain.sourcelink.json
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Domain\obj\Debug\net8.0\SentinelVMS.Domain.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Domain\obj\Debug\net8.0\refint\SentinelVMS.Domain.dll
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Domain\obj\Debug\net8.0\SentinelVMS.Domain.pdb
+c:\Users\JCSSI-PC\Documents\GitHub\Vitech-CCTV-Software-Version-3\SentinelVMS.Domain\obj\Debug\net8.0\ref\SentinelVMS.Domain.dll
